@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style9.css" />
+	 <script type="text/javascript">
+        function ValidMail() {
+            let re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+            let re1 = /^[\w ]+$/i;
+            let myMail = document.getElementById('email').value;
+            let myName = document.getElementById('name').value;
+            let myTheme = document.getElementById('theme').value;
+            let myText = document.getElementById('text').value;
+            let valid = re.test(myMail);
+            let valid1 = re1.test(myName);
+            let valid2 = re1.test(myTheme);
+            let valid3 = re1.test(myText);
+            if (valid && valid1 && valid2 && valid3) output = 'Все заполнено правильно!';
+            else output = 'Что то заполнено неправильно...';
+            document.getElementById('message').innerHTML = output;
+            return valid;
+        }
+    </script>
+	 </head>
+	 <body>
+<div id="footer">
+            <div id="Otziv">
+                <p id="message"> </p>
+                <p><h2>Оставьте отзыв</h2></p>
+
+                Имя:<br /> <input id="name" name="name" type="text" size="20" /><br />
+                E-mail:<br /> <input id="email" name="email" type="text" size="20" /><br />
+                Заголовок:<br /> <input id="theme" type="text" name="mainN" size="20" /><br />
+                Текст отзыва:<br /> <input id="text" type="text" name="smth" size="50" />
+                <input name="button" type="submit" value="Отправить" onClick="ValidMail();" />
+
+            </div>
+</body>
+</html>
